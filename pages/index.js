@@ -14,11 +14,11 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Meta from '@hackclub/meta'
 import Nav from '../components/nav'
-import BGImg from '../components/background-image'
 import ForceTheme from '../components/force-theme'
 import Footer from '../components/footer'
 import Stage from '../components/stage'
-import Carousel from '../components/index/carousel'
+import Carousel from '../components/carousel' // Carousel for the top of the webpage
+import YSWSCarousel from '../components/index/carousel'
 import Sprig from '../components/index/cards/sprig'
 import Sinerider from '../components/index/cards/sinerider'
 import SprigConsole from '../components/index/cards/sprig-console'
@@ -197,108 +197,7 @@ function Page({
             overflowX: 'hidden'
           }}
         >
-          <BGImg
-            src={OuternetImgFile}
-            alt="Hack Clubbers gather in the great outdoors of Cabot, VT, for an experience unlike any other: Outernet. 📸 Photo by Matt Gleich, Hack Clubber in NH!"
-            priority
-            gradient="linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.45))"
-          />
-          <Box
-            sx={{
-              width: '90vw',
-              maxWidth: [null, 'layout'],
-              position: 'relative',
-              mx: 'auto',
-              py: [4, 4, 4],
-              textShadow: 'text'
-            }}
-          >
-            <Text
-              variant="eyebrow"
-              sx={{
-                color: 'sunken',
-                pb: 2,
-                position: 'relative',
-                display: 'block'
-              }}
-              as="h4"
-            >
-              Welcome to Hack&nbsp;Club
-            </Text>
-            <Heading>
-              <Text
-                as="p"
-                variant="title"
-                sx={{
-                  color: 'white',
-                  mb: [3, 4],
-                  zIndex: 1,
-                  textAlign: 'left',
-                  fontSize: ['42px', '52px', '64px'],
-                  lineHeight: 1.2,
-                  width: '100%'
-                }}
-              >
-                We are <Comma>{slackData.total_members_count}</Comma>{' '}
-                <Text
-                  sx={{
-                    color: 'transparent',
-                    ml: 2,
-                    mr: 3,
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  <Text
-                    onClick={() => {
-                      !reveal ? setReveal(true) : setReveal(false)
-                    }}
-                    sx={{
-                      // lineHeight: 0.875,
-                      px: 2,
-                      backgroundColor: 'red',
-                      position: 'absolute',
-                      borderRadius: 10,
-                      transform: 'rotate(-3deg) translateY(-5px)',
-                      color: 'white',
-                      whiteSpace: 'nowrap',
-                      textDecoration: 'none',
-                      '&:hover': {
-                        cursor: 'pointer'
-                      }
-                    }}
-                    aria-hidden="true"
-                  >
-                    teen hackers
-                  </Text>
-                  teen hackers
-                </Text>
-                <br sx={{ display: ['inline', 'none', 'none'] }} /> from around
-                the world who code together
-              </Text>
-              <Button
-                variant="ctaLg"
-                as="a"
-                href="/slack"
-                mt={[3, 0, 0]}
-                mr={3}
-                sx={{ transformOrigin: 'center left' }}
-              >
-                Join Slack
-              </Button>
-              <Button
-                variant="ctaLg"
-                as="a"
-                href="https://shipwrecked.hack.club/3"
-                mt={3}
-                sx={{ 
-                  transformOrigin: 'left',
-                  backgroundImage: t => t.util.gx('green', 'blue'),
-                }}
-              >
-                Sign Up: Private Island Hackathon
-              </Button>
-            </Heading>
-          </Box>
+          <Carousel />
           <Box
             sx={{
               display: 'flex',
@@ -326,7 +225,7 @@ function Page({
               }}
               title="📸 Photo by Matt Gleich, Hack Clubber in NH!"
             >
-              Hackers at Outernet in Vermont
+              Uhhhh remind felix to fix this
             </Badge>
           </Box>
         </Box>
@@ -344,7 +243,7 @@ function Page({
               as="h1"
               sx={{ fontSize: ['36px', '48px', '56px'] }}
             >
-              Discover the{' '}
+              Welcome to {' '}
               <Text
                 as="span"
                 sx={{
@@ -358,9 +257,8 @@ function Page({
                   WebkitTextFillColor: 'transparent'
                 }}
               >
-                joy of code
+                Hack Club
               </Text>
-              , together.
             </Text>
             <Text
               variant="subtitle"
@@ -618,7 +516,7 @@ function Page({
             </Grid>
           </Box>
         </Box>
-        <Carousel cards={carouselCards} />
+        <YSWSCarousel cards={carouselCards} />
         <Box
           id="spotlight"
           as="section"
