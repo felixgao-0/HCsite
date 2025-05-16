@@ -7,7 +7,7 @@ import PageVisibility from 'react-page-visibility'
 import { Fade } from 'react-reveal'
 /** @jsxImportSource theme-ui */
 
-export default function Carousel({ cards }) {
+export default function YSWSCarousel({ cards }) {
   let [speed, setSpeed] = useState(5)
 
   const [pageIsVisible, setPageIsVisible] = useState(true)
