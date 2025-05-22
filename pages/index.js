@@ -43,6 +43,7 @@ import Trail from '../components/index/cards/trail'
 import Scrapyard from '../components/index/cards/scrapyard'
 import Neighborhood from '../components/index/cards/neighborhood'
 import Statistics from '../components/statistics'
+import Happenings from '../components/happenings'
 /** @jsxImportSource theme-ui */
 
 function Page({
@@ -672,6 +673,12 @@ function Page({
               <Workshops delay={400} stars={stars.hackclub.stargazerCount} />
             </Box>
           </Box>
+          <Box 
+            margin="0" 
+            backgroundColor="blue"
+          >
+            <Happenings />
+          </Box>
           <Box
             sx={{
               position: 'relative',
@@ -1051,7 +1058,6 @@ function Page({
             </Box>
           </>
         )}
-        <MailingList />
       </Box>
       <Footer
         dark
