@@ -42,6 +42,7 @@ import Onboard from '../components/index/cards/onboard'
 import Trail from '../components/index/cards/trail'
 import Scrapyard from '../components/index/cards/scrapyard'
 import Neighborhood from '../components/index/cards/neighborhood'
+import Statistics from '../components/statistics'
 /** @jsxImportSource theme-ui */
 
 function Page({
@@ -186,49 +187,7 @@ function Page({
         <Konami action={easterEgg}>
           {"Hey, I'm an Easter Egg! Look at me!"}
         </Konami>
-        <Box
-          as="header"
-          sx={{
-            bg: 'dark',
-            pt: [5, 6],
-            pb: [2, 3],
-            textAlign: 'left',
-            position: 'relative',
-            overflowX: 'hidden'
-          }}
-        >
-          <Carousel />
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: ['flex-start', 'flex-start', 'flex-end'],
-              marginRight: 2,
-              mt: [4, 3, 1]
-            }}
-          >
-            <Badge
-              as="a"
-              href="https://outernet.hackclub.com/"
-              target="_blank"
-              rel="noopener"
-              variant="pill"
-              sx={{
-                zIndex: '1',
-                bg: 'black',
-                color: 'white',
-                opacity: 1,
-                textDecoration: 'none',
-                fontWeight: 'normal',
-                ':hover': { opacity: 1 },
-                transition: '0.3s ease'
-                // mixBlendMode: 'multiply'
-              }}
-              title="📸 Photo by Matt Gleich, Hack Clubber in NH!"
-            >
-              Uhhhh remind felix to fix this
-            </Badge>
-          </Box>
-        </Box>
+        <Carousel />
         <Box as="section" sx={{ py: [4, 5, '82px'], color: 'black' }}>
           <Box
             sx={{
@@ -516,6 +475,7 @@ function Page({
             </Grid>
           </Box>
         </Box>
+        <Statistics />
         <YSWSCarousel cards={carouselCards} />
         <Box
           id="spotlight"
