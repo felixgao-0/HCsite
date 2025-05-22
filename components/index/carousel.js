@@ -31,7 +31,7 @@ export default function YSWSCarousel({ cards }) {
               margin: 'auto'
             }}
           >
-            Here are a few projects you could get involved in:
+            Building epic projects like these!
           </Text>
           <Ticker speed={speed} sx={{ overflowX: 'hidden' }}>
             {() => (
